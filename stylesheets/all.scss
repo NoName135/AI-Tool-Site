@@ -87,6 +87,37 @@
 }
 
 // other
+// Grass animation
+.grass-slider {
+  overflow: hidden;
+  animation-duration:3s;
+}
+.grass-slider img {
+  transform: translateY(100%);
+}
+.slide-grass-1 {
+  animation: scroll-t 3s 0.6s infinite;
+}
+.slide-grass-2 {
+  animation: scroll-t 3s 0.3s infinite;
+}
+.slide-grass-3 {
+  animation: scroll-t 3s 0s infinite;
+}
+@keyframes scroll-t {
+  0% {
+    transform: translateY(100%);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+}
 // Logo Carousel
 .slider {
   background: #020202;
