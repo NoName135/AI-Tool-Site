@@ -187,11 +187,11 @@
 }
 
 // AI Cards
-.ai-checkbox + label {
+.ai-radio + label {
   background: #FFF;
   color: $gray-600;
 }
-.ai-checkbox:checked + label {
+.ai-radio:checked + label {
   background: $gray-200;
   color: $gray-900;
 }
