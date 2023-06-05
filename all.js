@@ -125,7 +125,7 @@ const getData = ({ type, sort, page, search }) => {
   const apiUrl = `${apiPath}/api/v1/works?sort=${sort}&page=${page}${type ? `&type=${type}` : ''}${search ? `&search=${search}` : ''}`;
   axios.get(apiUrl)
     .then(res => {
-      console.log(res);
+      // console.log(res);
       const {data, page} = res.data.ai_works;
       worksData = data;
       pageData = page;
