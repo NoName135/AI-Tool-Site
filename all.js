@@ -42,12 +42,12 @@ const renderData = () => {
         </div>
         <div class="d-flex flex-column">
           <div class="card-body d-flex justify-content-between align-items-center py-3 border-top">
-            <span class="fw-bold">AI 模型</span>
-            <span>${item.model}</span>
+            <span class="fw-bold">${item.model}</span>
+            <span>${item.discordId}</span>
           </div>
           <div class="card-body d-flex justify-content-between align-items-center py-3 border-top">
             <span class="text">#${item.type}</span>
-            <a href="https://2023-engineer-camp-ai-template.vercel.app/" target="_blank" class="material-icons fs-7 text-dark text-decoration-none">share</a>
+            <a href="${item.link}" target="_blank" class="material-icons fs-7 text-dark text-decoration-none">share</a>
           </div>
         </div>
       </div>
@@ -66,8 +66,8 @@ const renderPage = () => {
     (_, index) => index + 1
   );
   // console.log(pageArr)
-  pages += /*html*/`
-    <li class="page-item ${pageData.hasPre ? "" : "disabled"}">
+  pages += /*html*/ `
+    <li class="page-item ${pageData.has_pre ? '' : 'disabled'}">
       <a class="page-link fw-bold" href="#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
@@ -81,7 +81,7 @@ const renderPage = () => {
     `;
   })
   pages += /*html*/ `
-    <li class="page-item ${pageData.hasNext ? '' : 'disabled'}">
+    <li class="page-item ${pageData.has_next ? '' : 'disabled'}">
       <a class="page-link fw-bold" href="#" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
@@ -125,7 +125,7 @@ const getData = ({ type, sort, page, search }) => {
   const apiUrl = `${apiPath}/api/v1/works?sort=${sort}&page=${page}${type ? `&type=${type}` : ''}${search ? `&search=${search}` : ''}`;
   axios.get(apiUrl)
     .then(res => {
-      // console.log(res);
+      console.log(res);
       const {data, page} = res.data.ai_works;
       worksData = data;
       pageData = page;
